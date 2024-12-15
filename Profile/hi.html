@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #8e44ad, #e74c3c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .profile-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .profile-header {
+            background-color: #8e44ad;
+            color: white;
+            padding: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .profile-content {
+            padding: 20px;
+        }
+        .profile-content img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            border: 3px solid #e74c3c;
+        }
+        .profile-content .file-input {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .profile-content .file-input span {
+            color: #6b7280;
+            font-size: 12px;
+        }
+        .profile-content .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #8e44ad;
+        }
+        .profile-content .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .profile-content .form-group .form-field {
+            flex: 1;
+            min-width: 200px;
+        }
+        .profile-content .form-group .form-field label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .profile-content .form-group .form-field input,
+        .profile-content .form-group .form-field textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .profile-content .form-group .form-field textarea {
+            resize: none;
+            height: 100px;
+        }
+        .profile-content .update-button {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        .profile-content .update-button button {
+            background-color: #8e44ad;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        .profile-content .update-button button:hover {
+            background-color: #e74c3c;
+        }
+        .profile-content input:focus, 
+        .profile-content textarea:focus {
+            border-color: #8e44ad;
+            outline: none;
+            box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            Profile
+        </div>
+        <div class="profile-content">
+            <div class="file-input">
+                <img alt="Profile picture of a person with short hair" 
+                     src="https://storage.googleapis.com/a1aa/image/eN1GnpSVfKlGGEUOAHRREL0MDBXSzUycee32INbuuff48VteJA.jpg"/>
+                <input id="file" name="file" type="file"/>
+                <span>No file chosen</span>
+                <span>Maximum file size: 1 MB</span>
+            </div>
+            <div class="section-title">BASIC</div>
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="first-name">First name <span style="color: red;">*</span></label>
+                    <input id="first-name" name="first-name" type="text" value="Alice"/>
+                </div>
+                <div class="form-field">
+                    <label for="last-name">Last name <span style="color: red;">*</span></label>
+                    <input id="last-name" name="last-name" type="text" value="Coleman"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="about-me">About me</label>
+                    <textarea id="about-me" name="about-me">Tell about yourself</textarea>
+                </div>
+            </div>
+            <div class="section-title">ADDITIONAL INFORMATION</div>
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="location">Location</label>
+                    <input id="location" name="location" type="text" value="German"/>
+                </div>
+                <div class="form-field">
+                    <label for="languages">Languages</label>
+                    <input id="languages" name="languages" type="text" value="English, German"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="email">Email <span style="color: red;">*</span></label>
+                    <input id="email" name="email" type="email" value="demo@link.com"/>
+                </div>
+                <div class="form-field">
+                    <label for="phone">Phone <span style="color: red;">*</span></label>
+                    <input id="phone" name="phone" type="tel" value="+38(000)132-22-22"/>
+                </div>
+            </div>
+            <div class="section-title">SETTINGS</div>
+            <div class="form-group">
+                <div class="form-field">
+                    <label for="new-password">New password</label>
+                    <input id="new-password" name="new-password" type="password" value="Password"/>
+                </div>
+                <div class="form-field">
+                    <label for="confirm-password">Confirm password</label>
+                    <input id="confirm-password" name="confirm-password" type="password" value="Password"/>
+                </div>
+            </div>
+            <div class="update-button">
+                <button type="button">Update</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

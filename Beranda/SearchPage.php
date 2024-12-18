@@ -11,6 +11,7 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 <html>
     <head>
         <title>Search Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <style>
         body {
         font-family: "Roboto", sans-serif;
@@ -38,6 +39,35 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
         text-decoration: none;
         margin: 0 10px;
         font-size: 1rem;}
+
+
+   /* Search Section */
+   .search-container {
+  position: relative;
+}
+
+.search-container input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  width: 400px;
+  margin-left: 396px;
+  margin-top: 23px;
+}
+
+.search-container button {
+  top: 0;
+  right: 0;
+  padding: 10.5px;
+  background: linear-gradient(45deg, #e74c3c, #8e44ad);
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  margin-top: 23px;
+  position: absolute;
+  margin-right: 412px;
+} 
 
 /*Product*/
 .featured h2 {
@@ -82,6 +112,27 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
         margin: 1rem;
         color: #2c3e50;
       }
+
+      .product-card p {
+        color: #e74c3c;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0 1rem 1rem 1rem;
+      }
+
+      .fa-shopping-cart{
+    
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 10px;
+    margin-top: 0px;}
 
       /* Footer */
       .footer {
@@ -147,7 +198,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
             </div>
           </nav>
 
+      <!-- Hero Section with Search -->
+      <div class="search-container">
+  <input type="text" placeholder="Cari produk">
+  <button type="submit"><i class="fas fa-search"></i></button>
+</div>
 
+      <!--Produk-->
   <div class="product-grid">
     
     <!-- Barang 1 -->

@@ -400,7 +400,146 @@ $Photo = isset($_SESSION['Photo']) ? $_SESSION['Photo'] : null;
       <div class="logo">Cihuy Store</div>
       <div class="profile">
         <i class="bi bi-cart" data-bs-toggle="tooltip" title="Cart"></i>
-        <i class="bi bi-bell" data-bs-toggle="tooltip" title="Notifications"></i>
+              
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+            <style>
+            
+                body {
+                    font-family: Arial, sans-serif;
+                }
+        
+                .notification-container {
+                    position: relative;
+                    display: inline-block;
+                }
+        
+                .notification-dropdown-menu {
+                    position: absolute;
+                    top: 40px;
+                    right: 0;
+                    width: 300px;
+                    display: none;
+                    background: linear-gradient(to bottom, #ff5a5f, #9c5fd5); /* Gradient theme */
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                }
+        
+                .notification-dropdown-menu.show {
+                    display: block;
+                }
+        
+                .notification-dropdown-menu .dropdown-item {
+                    color: white;
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+        
+                .notification-dropdown-menu .dropdown-item:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+        
+                .tab-content {
+                    margin-top: 10px;
+                    padding: 10px;
+                    background: #db247a;
+                    border-radius: 8px;
+                    display: none;
+                }
+        
+                .tab-content.show {
+                    display: block;
+                }
+        
+                .tab-content ul {
+                    list-style-type: none;
+                    padding: 0;
+                }
+        
+                .tab-content ul li {
+                    margin: 5px 0;
+                    padding: 5px 10px;
+                    background: #db247a;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+        
+                .tab-content ul li:hover {
+                    background: #db247a;
+                }
+            </style>
+        </head>
+        <body>
+        
+        <div class="notification-container">
+            
+            <i class="fas fa-bell" data-bs-toggle="tooltip" title="Notifications"></i>
+        
+        
+            <div class="notification-dropdown-menu">
+                <div class="dropdown-item" data-tab="tab1">Summer Sale Discount</div>
+                <div class="dropdown-item" data-tab="tab2">New Added Product</div>
+                <div class="dropdown-item" data-tab="tab3">Shipment Tracking</div>
+            </div>
+        </div>
+        
+       
+        <div class="tab-content" id="tab1">
+            <h3>Summer Sale Discounts</h3>
+            <ul>
+                <li>10% Off</li>
+                <li>20% Off</li>
+                <li>30% Off</li>
+                <li>40% Off</li>
+                <li>50% Off</li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="tab2">
+            <h3>New Added Products</h3>
+            <ul>
+                <li>Pakaian A</li>
+                <li>pakaian B</li>
+                <li>Pakaian C</li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="tab3">
+            <h3>Shipment Tracking</h3>
+            <p>Melacak paket pesanan Anda.</p>
+        </div>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const bellIcon = document.querySelector('.fa-bell');
+                const dropdownMenu = document.querySelector('.notification-dropdown-menu');
+                const dropdownItems = document.querySelectorAll('.dropdown-item');
+                const tabContents = document.querySelectorAll('.tab-content');
+        
+                
+                bellIcon.addEventListener('click', function () {
+                    dropdownMenu.classList.toggle('show');
+                });
+        
+               
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function () {
+                const tabId = this.getAttribute('data-tab');
+                const tabContent = document.getElementById(tabId);
+
+                if (tabContent.classList.contains('show')) {
+                    tabContent.classList.remove('show');
+                } else {
+                  
+                    tabContents.forEach(tab => tab.classList.remove('show'));
+                    
+                    tabContent.classList.add('show');
+                }
+            });
+        });
+    });
+</script>
+        </body> 
         <i class="bi bi-person"
           id="profileDropdown"
           data-bs-toggle="dropdown"
